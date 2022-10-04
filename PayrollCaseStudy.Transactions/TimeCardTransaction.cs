@@ -20,7 +20,7 @@ namespace PayrollCaseStudy.Transactions {
         }
 
         public void Execute() {
-            var employee = Database.Instance.GetEmployee(_empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(_empId);
             if(employee == null) {
                 throw new Exception("No such employee");
             }

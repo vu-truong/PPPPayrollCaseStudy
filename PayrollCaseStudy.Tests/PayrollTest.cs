@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PayrollCaseStudy.PayrollDatabase;
 using PayrollCaseStudy.Transactions;
 using PayrollCaseStudy.Classifications;
 using PayrollCaseStudy.Schedules;
@@ -14,7 +13,7 @@ namespace PayrollCaseStudy.Domain.Tests {
     public class PayrollTest {
         [TestInitialize]
         public void Init() {
-            Database.Instance.Clear();
+            PayrollDatabase.PayrollDatabase.Instance.Clear();
         }
 
         [TestMethod]
@@ -24,7 +23,7 @@ namespace PayrollCaseStudy.Domain.Tests {
 
             t.Execute();
 
-            var e = Database.Instance.GetEmployee(empId);
+            var e = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.AreEqual("Bob", e.Name);
 
@@ -50,7 +49,7 @@ namespace PayrollCaseStudy.Domain.Tests {
 
             t.Execute();
 
-            var e = Database.Instance.GetEmployee(empId);
+            var e = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.AreEqual("Bob", e.Name);
 
@@ -76,7 +75,7 @@ namespace PayrollCaseStudy.Domain.Tests {
 
             t.Execute();
 
-            var e = Database.Instance.GetEmployee(empId);
+            var e = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.AreEqual("Bob", e.Name);
 
@@ -102,14 +101,14 @@ namespace PayrollCaseStudy.Domain.Tests {
             var addTx = new AddCommissionedEmployee(empId,"Lance", "Home", 2500, 3.2M);
             addTx.Execute();
 
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.IsNotNull(employee);
 
             var deleteTx = new DeleteEmployeeTransaction(empId);
             deleteTx.Execute();
 
-            employee = Database.Instance.GetEmployee(empId);
+            employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.IsNull(employee);
         }
@@ -124,7 +123,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             var timeCardTransaction = new TimeCardTransaction(new Date(10,31,2001), 8.0M, empId);
             timeCardTransaction.Execute();
 
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
             Assert.IsNotNull(employee);
 
             PaymentClassification classification = employee.GetClassification();
@@ -145,7 +144,7 @@ namespace PayrollCaseStudy.Domain.Tests {
 
             salesReceiptTX.Execute();
 
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
             Assert.IsNotNull(employee);
 
             PaymentClassification classification = employee.GetClassification();
@@ -164,13 +163,13 @@ namespace PayrollCaseStudy.Domain.Tests {
             var addTx = new AddHourlyEmployee(empId,"Bill", "Home", 15.25M);
             addTx.Execute();
 
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             var unionAffiliation = new UnionAffiliation(memberId,12.5M);
 
             employee.Affiliation = unionAffiliation;
 
-            Database.Instance.AddUnionMember(memberId,employee);
+            PayrollDatabase.PayrollDatabase.Instance.AddUnionMember(memberId, employee);
 
             var serviceChargeTransaction = new ServiceChargeTransaction(memberId, new Date(11,01,2001),12.95M);
             serviceChargeTransaction.Execute();
@@ -427,7 +426,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             var changeNameTx = new ChangeNameTransaction(empId,"Bob");
             changeNameTx.Execute();
 
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.IsNotNull(employee, "employee not found in database");
             Assert.AreEqual("Bob", employee.Name);
@@ -441,7 +440,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             var changeNameTx = new ChangeAddressTransaction(empId,"Work");
             changeNameTx.Execute();
 
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.IsNotNull(employee, "employee not found in database");
             Assert.AreEqual("Work", employee.Address);
@@ -456,7 +455,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             var changeHourlyTx = new ChangeHourlyTransaction(empId,27.25M);
             changeHourlyTx.Execute();
             
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.IsNotNull(employee, "employee not found in database");
 
@@ -482,7 +481,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             var changeSalariedTx = new ChangeSalariedTransaction(empId,2000M);
             changeSalariedTx.Execute();
             
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.IsNotNull(employee, "employee not found in database");
 
@@ -508,7 +507,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             var changeCommisionedTx = new ChangeCommissionedTransaction(empId,2000M,0.2M);
             changeCommisionedTx.Execute();
             
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.IsNotNull(employee, "employee not found in database");
 
@@ -535,7 +534,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             var changeDirectTx = new ChangeDirectTransaction(empId,"Citigroup", "12345678");
             changeDirectTx.Execute();
             
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.IsNotNull(employee, "employee not found in database");
 
@@ -558,7 +557,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             var changeMailTx = new ChangeMailTransaction(empId,"Home");
             changeMailTx.Execute();
             
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.IsNotNull(employee, "employee not found in database");
 
@@ -583,7 +582,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             var changeHoldTx = new ChangeHoldTransaction(empId);
             changeHoldTx.Execute();
 
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
 
             Assert.IsNotNull(employee, "employee not found in database");
 
@@ -602,7 +601,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             var changeMemberTx = new ChangeMemberTransaction(empId,memberId,99.42M);
             changeMemberTx.Execute();
 
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
             Assert.IsNotNull(employee, "Employee not found");
 
             var affiliation = employee.Affiliation;
@@ -611,7 +610,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             var unionAffiliation = (UnionAffiliation)affiliation;
             Assert.AreEqual(99.42M, unionAffiliation.Dues);
 
-            var member = Database.Instance.GetUnionMember(memberId);
+            var member = PayrollDatabase.PayrollDatabase.Instance.GetUnionMember(memberId);
             Assert.IsNotNull(member,"Member not found");
             Assert.AreEqual(employee,member);
         }
@@ -630,14 +629,14 @@ namespace PayrollCaseStudy.Domain.Tests {
             var changeUnaffiliatedTx = new ChangeUnaffiliatedTransaction(empId);
             changeUnaffiliatedTx.Execute();
 
-            var employee = Database.Instance.GetEmployee(empId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
             Assert.IsNotNull(employee, "Employee not found");
 
             var affiliation = employee.Affiliation;
 
             Assert.IsInstanceOfType(affiliation,typeof(NoAffiliation), "Has a union affiliation");
             
-            var member = Database.Instance.GetUnionMember(memberId);
+            var member = PayrollDatabase.PayrollDatabase.Instance.GetUnionMember(memberId);
             Assert.IsNull(member,"Membership was not removed from database");
         }
 

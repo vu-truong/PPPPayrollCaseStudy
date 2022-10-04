@@ -17,10 +17,10 @@ namespace PayrollCaseStudy.Transactions {
         }
 
         public void Execute() {
-            var empIds = Database.Instance.GetAllEmployeeIds();
+            var empIds = PayrollDatabase.PayrollDatabase.Instance.GetAllEmployeeIds();
 
             foreach(var empId in empIds) {
-                var employee = Database.Instance.GetEmployee(empId);
+                var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
                 if(employee == null) {
                     continue;
                 }

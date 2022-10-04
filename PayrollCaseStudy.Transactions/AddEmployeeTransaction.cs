@@ -28,7 +28,7 @@ namespace PayrollCaseStudy.Transactions {
             employee.Classification = classification;
             employee.Schedule = paymentSchedule;
             employee.Method = method;
-            Database.Instance.AddEmployee(_employeeId, employee);
+            PayrollDatabase.PayrollDatabase.Instance.AddEmployee(_employeeId, employee);
         }
 
         protected abstract PaymentSchedule GetSchedule(); 

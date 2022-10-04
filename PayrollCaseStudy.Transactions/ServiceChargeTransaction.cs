@@ -19,7 +19,7 @@ namespace PayrollCaseStudy.Transactions {
             _charge = charge;
         }
         public void Execute() {
-            Employee e = Database.Instance.GetUnionMember(_memberId);
+            Employee e = PayrollDatabase.PayrollDatabase.Instance.GetUnionMember(_memberId);
 
             var unionAffiliation = e.Affiliation as UnionAffiliation;
 

@@ -1,11 +1,8 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.PayrollDatabase {
-    public class Database {
+    public class PayrollDatabase {
         readonly Dictionary<int, Employee> _itsEmployees = new Dictionary<int,Employee>();
         readonly Dictionary<int,int> _unionMemberMap = new Dictionary<int,int>();
 
@@ -23,9 +20,9 @@ namespace PayrollCaseStudy.PayrollDatabase {
             _itsEmployees.Clear();
         }
 
-        Database(){}
+        PayrollDatabase(){}
 
-        public readonly static Database Instance = new Database();
+        public readonly static PayrollDatabase Instance = new PayrollDatabase();
 
         public void DeleteEmployee(int employeeId) {
             _itsEmployees.Remove(employeeId);

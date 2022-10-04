@@ -20,7 +20,7 @@ namespace PayrollCaseStudy.Transactions {
             if(affiliation==null) {
                 return;
             }
-            Database.Instance.RemoveUnionMember(affiliation.MemberId);
+            PayrollDatabase.PayrollDatabase.Instance.RemoveUnionMember(affiliation.MemberId);
         }
     }
 }

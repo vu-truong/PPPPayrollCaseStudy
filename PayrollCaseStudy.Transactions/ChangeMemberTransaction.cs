@@ -24,7 +24,7 @@ namespace PayrollCaseStudy.Transactions {
         }
 
         protected override void RecordMembership(Employee e) {
-            Database.Instance.AddUnionMember(_memberId,e);
+            PayrollDatabase.PayrollDatabase.Instance.AddUnionMember(_memberId, e);
         }
     }
 }

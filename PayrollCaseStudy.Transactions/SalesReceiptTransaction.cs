@@ -19,7 +19,7 @@ namespace PayrollCaseStudy.Transactions {
             _employeeId = employeeId;
         }
         public void Execute() {
-            var employee = Database.Instance.GetEmployee(_employeeId);
+            var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(_employeeId);
 
             if(employee == null) {
                 throw new Exception("Employee not found");
