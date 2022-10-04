@@ -26,3 +26,7 @@
 /PayrollCaseStudy.Transactions/bin
 /PayrollCaseStudy.Tests/obj
 /PayrollCaseStudy.Tests/bin
+
+.vs
+bin
+obj
