@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.TransactionApplication {
-    public class Application {
+    public class TransactionApplicaion {
         readonly TransactionSource _source;
-        public Application(TransactionSource transactionSource) {
+        public TransactionApplicaion(TransactionSource transactionSource) {
             _source= transactionSource;
             
         }

@@ -48,3 +48,7 @@
 /PayrollCaseStudy.MethodTransactions/obj
 /PayrollCaseStudy.TransactionApplication/obj
 /PayrollCaseStudy.TransactionApplication/bin
+
+.vs
+bin
+obj
