@@ -1,12 +1,7 @@
 ﻿using PayrollCaseStudy.Classifications;
 using PayrollCaseStudy.CommonTypes;
-using PayrollCaseStudy.PayrollDomain;
 using PayrollCaseStudy.TransactionApplication;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.ClassificationTransactions {
     public class TimeCardTransaction : Transaction{
