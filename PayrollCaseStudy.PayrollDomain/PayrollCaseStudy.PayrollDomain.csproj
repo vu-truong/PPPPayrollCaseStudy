@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Affiliation.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="HoldMethod.cs" />
     <Compile Include="NoAffiliation.cs" />
     <Compile Include="Paycheck.cs" />
     <Compile Include="PaymentClassification.cs" />
