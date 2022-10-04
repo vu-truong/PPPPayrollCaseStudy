@@ -21,7 +21,7 @@ namespace PayrollCaseStudy.AffiliationTransactions {
             _charge = charge;
         }
         public void Execute() {
-            Employee e = PayrollDatabase.Scope.DatabaseInstance.GetUnionMember(_memberId);
+            Employee e = PayrollDatabase.Scope.PayrollDatabase.GetUnionMember(_memberId);
 
             var unionAffiliation = e.Affiliation as UnionAffiliation;
 

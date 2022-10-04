@@ -21,7 +21,7 @@ namespace PayrollCaseStudy.AffiliationTransactions {
             if(affiliation==null) {
                 return;
             }
-            PayrollDatabase.Scope.DatabaseInstance.RemoveUnionMember(affiliation.MemberId);
+            PayrollDatabase.Scope.PayrollDatabase.RemoveUnionMember(affiliation.MemberId);
         }
     }
 }

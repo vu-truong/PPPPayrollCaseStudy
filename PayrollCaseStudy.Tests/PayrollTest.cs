@@ -19,7 +19,7 @@ namespace PayrollCaseStudy.Domain.Tests {
 
         [ClassInitialize]
         public static void InitClass(TestContext t) {
-            PayrollDatabase.Scope.DatabaseInstance = Database;
+            PayrollDatabase.Scope.PayrollDatabase = Database;
         }
 
         [TestInitialize]
