@@ -1,9 +1,5 @@
 ﻿using PayrollCaseStudy.Classifications;
 using PayrollCaseStudy.PayrollDomain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace PayrollCaseStudy.ClassificationTransactions {
     public class ChangeSalariedTransaction : ChangeClassificationTransaction{

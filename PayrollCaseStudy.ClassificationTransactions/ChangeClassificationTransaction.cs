@@ -1,10 +1,5 @@
-﻿using PayrollCaseStudy.Classifications;
-using PayrollCaseStudy.GeneralTransactions;
+﻿using PayrollCaseStudy.GeneralTransactions;
 using PayrollCaseStudy.PayrollDomain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace PayrollCaseStudy.ClassificationTransactions {
     public abstract class ChangeClassificationTransaction : ChangeEmployeeTransaction{

@@ -1,20 +1,11 @@
-﻿using PayrollCaseStudy.Affiliations;
-using PayrollCaseStudy.AffiliationTransactions;
-using PayrollCaseStudy.Classifications;
+﻿using PayrollCaseStudy.AffiliationTransactions;
 using PayrollCaseStudy.ClassificationTransactions;
 using PayrollCaseStudy.CommonTypes;
 using PayrollCaseStudy.GeneralTransactions;
-using PayrollCaseStudy.Methods;
 using PayrollCaseStudy.MethodTransactions;
-using PayrollCaseStudy.PayrollDomain;
 using PayrollCaseStudy.TransactionApplication;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.PayrollApplication {
     public class TextParserTransactionSource : TransactionSource{
