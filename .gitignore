@@ -38,3 +38,7 @@
 /PayrollCaseStudy.PayrollDomain/bin
 /PayrollCaseStudy.TextParser/obj
 /PayrollCaseStudy.TextParser/bin
+
+.vs
+bin/
+obj/
