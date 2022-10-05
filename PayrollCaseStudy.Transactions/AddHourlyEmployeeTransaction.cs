@@ -7,19 +7,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.Transactions {
-    public class AddSalariedEmployee : AddEmployeeTransaction{
-        private decimal _itsSalary;
+    public class AddHourlyEmployeeTransaction : AddEmployeeTransaction{
+        private decimal _hourlyRate;
 
-        public AddSalariedEmployee(int employeeId, string name, string address, decimal salary) : base(employeeId,name,address) {
-            _itsSalary = salary;
+        public AddHourlyEmployeeTransaction(int empId,string name,string address,decimal hourlyRate) : base(empId,name,address){
+            _hourlyRate = hourlyRate;
         }
 
         protected override PaymentSchedule GetSchedule() {
-            return new MonthlySchedule();
+            return new WeeklySchedule();
         }
 
         protected override PaymentClassification GetClassification() {
-            return new SalariedClassification(_itsSalary);
+            return new HourlyClassification(_hourlyRate);
         }
     }
 }

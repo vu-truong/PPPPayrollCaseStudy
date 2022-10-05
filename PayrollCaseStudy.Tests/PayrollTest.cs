@@ -19,7 +19,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestAddSalariedEmployee() {
             int empId = 1;
-            var t = new AddSalariedEmployee(empId, "Bob", "Home", 1000.0M);
+            var t = new AddSalariedEmployeeTransaction(empId, "Bob", "Home", 1000.0M);
 
             t.Execute();
 
@@ -45,7 +45,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestAddHourlyEmployee() {
             int empId = 1;
-            var t = new AddHourlyEmployee(empId, "Bob", "Home", 10.0M);
+            var t = new AddHourlyEmployeeTransaction(empId, "Bob", "Home", 10.0M);
 
             t.Execute();
 
@@ -71,7 +71,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestAddCommisionedEmployee() {
             int empId = 1;
-            var t = new AddCommissionedEmployee(empId, "Bob", "Home", 1000.0M, 50.0M);
+            var t = new AddCommissionedEmployeeTransaction(empId, "Bob", "Home", 1000.0M, 50.0M);
 
             t.Execute();
 
@@ -98,7 +98,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestDeleteEmployee() {
             int empId = 3;
-            var addTx = new AddCommissionedEmployee(empId,"Lance", "Home", 2500, 3.2M);
+            var addTx = new AddCommissionedEmployeeTransaction(empId,"Lance", "Home", 2500, 3.2M);
             addTx.Execute();
 
             var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
@@ -116,7 +116,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestTimeCardTransaction() {
             int empId = 2;
-            var addTx = new AddHourlyEmployee(empId,"Bill", "Home", 15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill", "Home", 15.25M);
             addTx.Execute();
 
             
@@ -137,7 +137,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestSalesReceiptTransaction() {
             int empId = 2;
-            var addTx = new AddCommissionedEmployee(empId,"Bill", "Home", 1000M,3.2M);
+            var addTx = new AddCommissionedEmployeeTransaction(empId,"Bill", "Home", 1000M,3.2M);
             addTx.Execute();
 
             var salesReceiptTX = new SalesReceiptTransaction(1000M, new Date(10,31,2001), empId);
@@ -160,7 +160,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         public void TestAddServiceCharge() {
             int empId = 2;
             int memberId = 7734;
-            var addTx = new AddHourlyEmployee(empId,"Bill", "Home", 15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill", "Home", 15.25M);
             addTx.Execute();
 
             var employee = PayrollDatabase.PayrollDatabase.Instance.GetEmployee(empId);
@@ -183,7 +183,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         public void TestPaySingleSalariedEmployee() {
             int empId = 1;
 
-            var addTx = new AddSalariedEmployee(empId,"Bob", "Home", 1000);
+            var addTx = new AddSalariedEmployeeTransaction(empId,"Bob", "Home", 1000);
             addTx.Execute();
 
             var payDate = new Date(11,30,2001);
@@ -205,7 +205,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         public void TestPaySingleSalariedEmployeeOnWrongDate() {
             int empId = 1;
 
-            var addTx = new AddSalariedEmployee(empId,"Bob", "Home", 1000);
+            var addTx = new AddSalariedEmployeeTransaction(empId,"Bob", "Home", 1000);
             addTx.Execute();
 
             var payDate = new Date(11,29,2001);
@@ -222,7 +222,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         public void TestPaySingleHourlyEmployeeNoTimeCards(){
             int empId = 2;
 
-            var addTx = new AddHourlyEmployee(empId,"Bill","Home",15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill","Home",15.25M);
             addTx.Execute();
             var payDate = new Date(11,9,2001);
             Assert.AreEqual(DayOfWeek.Friday,payDate.DayOfWeek);
@@ -237,7 +237,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestPaySingleHourlyEmployeeOneTimeCard() {
             int empId = 2;
-            var addTx = new AddHourlyEmployee(empId,"Bill","Home",15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill","Home",15.25M);
             addTx.Execute();
             var payDate = new Date(11,9,2001);
             Assert.AreEqual(DayOfWeek.Friday,payDate.DayOfWeek);
@@ -252,7 +252,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestPaySingleHourlyEmployeeOvertimeOneTimeCard() {
             int empId = 2;
-            var addTx = new AddHourlyEmployee(empId,"Bill","Home",15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill","Home",15.25M);
             addTx.Execute();
             var payDate = new Date(11,9,2001);
             Assert.AreEqual(DayOfWeek.Friday,payDate.DayOfWeek);
@@ -269,7 +269,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestPaySingleHourlyEmployeeOnWrongDate() {
             int empId = 2;
-            var addTx = new AddHourlyEmployee(empId,"Bill","Home",15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill","Home",15.25M);
             addTx.Execute();
             var payDate = new Date(11,8,2001);
             Assert.AreEqual(DayOfWeek.Thursday,payDate.DayOfWeek);
@@ -288,7 +288,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestPaySingleHourlyEmployeeTwoTimeCards() {
             int empId = 2;
-            var addTx = new AddHourlyEmployee(empId,"Bill","Home",15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill","Home",15.25M);
             addTx.Execute();
             var payDate = new Date(11,9,2001);
             Assert.AreEqual(DayOfWeek.Friday,payDate.DayOfWeek);
@@ -305,7 +305,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestPaySingleHourlyEmployeeWithTimeCardsSpanningTwoPayPeriods() {
             int empId = 2;
-            var addTx = new AddHourlyEmployee(empId,"Bill","Home",15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill","Home",15.25M);
             addTx.Execute();
             var payDate = new Date(11,9,2001);
             var dateInPreviousPeriod= new Date(11,2,2001);
@@ -326,7 +326,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         public void TestPaySingleCommissionedEmployee() {
             int empId = 1;
 
-            var addTx = new AddCommissionedEmployee(empId,"Bob", "Home", 1000,0.2M);
+            var addTx = new AddCommissionedEmployeeTransaction(empId,"Bob", "Home", 1000,0.2M);
             addTx.Execute();
 
             var payDate = new Date(11,16,2001);
@@ -345,7 +345,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         public void TestPaySingleCommissionedEmployeeWrongDate() {
             int empId = 1;
 
-            var addTx = new AddCommissionedEmployee(empId,"Bob", "Home", 1000,0.2M);
+            var addTx = new AddCommissionedEmployeeTransaction(empId,"Bob", "Home", 1000,0.2M);
             addTx.Execute();
 
             var payDate = new Date(11,9,2001);
@@ -361,7 +361,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         public void TestPaySingleCommissionedEmployeeWithSingleSale() {
             int empId = 1;
 
-            var addTx = new AddCommissionedEmployee(empId,"Bob", "Home", 1000,0.2M);
+            var addTx = new AddCommissionedEmployeeTransaction(empId,"Bob", "Home", 1000,0.2M);
             addTx.Execute();
 
             var saleTx = new SalesReceiptTransaction(100, new Date(11,9,2001),empId);
@@ -380,7 +380,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         public void TestPaySingleCommissionedEmployeeWithTwoSales() {
             int empId = 1;
 
-            var addTx = new AddCommissionedEmployee(empId,"Bob", "Home", 1000,0.2M);
+            var addTx = new AddCommissionedEmployeeTransaction(empId,"Bob", "Home", 1000,0.2M);
             addTx.Execute();
 
             var saleTx1 = new SalesReceiptTransaction(100, new Date(11,9,2001),empId);
@@ -402,7 +402,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         public void TestPaySingleCommissionedEmployeeNotForThisPayperiod() {
             int empId = 1;
 
-            var addTx = new AddCommissionedEmployee(empId,"Bob", "Home", 1000,0.2M);
+            var addTx = new AddCommissionedEmployeeTransaction(empId,"Bob", "Home", 1000,0.2M);
             addTx.Execute();
 
             var saleTx = new SalesReceiptTransaction(100, new Date(11,2,2001),empId);
@@ -421,7 +421,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestChangeNameTransaction() {
             var empId = 1;
-            var addTx = new AddHourlyEmployee(empId,"Bill","Home",15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill","Home",15.25M);
             addTx.Execute();
             var changeNameTx = new ChangeNameTransaction(empId,"Bob");
             changeNameTx.Execute();
@@ -435,7 +435,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestChangeAddressTransaction() {
             var empId = 1;
-            var addTx = new AddHourlyEmployee(empId,"Bill","Home",15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill","Home",15.25M);
             addTx.Execute();
             var changeNameTx = new ChangeAddressTransaction(empId,"Work");
             changeNameTx.Execute();
@@ -449,7 +449,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestChangeHourlyTransaction() {
             var empId = 1;
-            var addTx = new AddCommissionedEmployee(empId,"Lance","Home",2500,3.2M);
+            var addTx = new AddCommissionedEmployeeTransaction(empId,"Lance","Home",2500,3.2M);
             addTx.Execute();
             
             var changeHourlyTx = new ChangeHourlyTransaction(empId,27.25M);
@@ -475,7 +475,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestChangeSalariedTransaction() {
             var empId = 1;
-            var addTx = new AddCommissionedEmployee(empId,"Lance","Home",2500,3.2M);
+            var addTx = new AddCommissionedEmployeeTransaction(empId,"Lance","Home",2500,3.2M);
             addTx.Execute();
             
             var changeSalariedTx = new ChangeSalariedTransaction(empId,2000M);
@@ -501,7 +501,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestChangeCommissionedTransaction() {
             var empId = 1;
-            var addTx = new AddSalariedEmployee(empId,"Lance","Home",2500);
+            var addTx = new AddSalariedEmployeeTransaction(empId,"Lance","Home",2500);
             addTx.Execute();
             
             var changeCommisionedTx = new ChangeCommissionedTransaction(empId,2000M,0.2M);
@@ -528,7 +528,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestChangeDirectTransaction() {
             var empId = 1;
-            var addTx = new AddSalariedEmployee(empId,"Lance","Home",2500);
+            var addTx = new AddSalariedEmployeeTransaction(empId,"Lance","Home",2500);
             addTx.Execute();
             
             var changeDirectTx = new ChangeDirectTransaction(empId,"Citigroup", "12345678");
@@ -551,7 +551,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestChangeMailTransaction() {
             var empId = 1;
-            var addTx = new AddSalariedEmployee(empId,"Lance","Home",2500);
+            var addTx = new AddSalariedEmployeeTransaction(empId,"Lance","Home",2500);
             addTx.Execute();
             
             var changeMailTx = new ChangeMailTransaction(empId,"Home");
@@ -573,7 +573,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestChangeHoldTransaction() {
             var empId = 1;
-            var addTx = new AddSalariedEmployee(empId,"Lance","Home",2500);
+            var addTx = new AddSalariedEmployeeTransaction(empId,"Lance","Home",2500);
             addTx.Execute();
             
             var changeMailTx = new ChangeMailTransaction(empId,"Home");
@@ -596,7 +596,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             int empId = 2;
             int memberId = 7734;
 
-            var addTx = new AddHourlyEmployee(empId,"Bill", "Home", 15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill", "Home", 15.25M);
             addTx.Execute();
             var changeMemberTx = new ChangeMemberTransaction(empId,memberId,99.42M);
             changeMemberTx.Execute();
@@ -620,7 +620,7 @@ namespace PayrollCaseStudy.Domain.Tests {
             int empId = 2;
             int memberId = 7734;
 
-            var addTx = new AddHourlyEmployee(empId,"Bill", "Home", 15.25M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill", "Home", 15.25M);
             addTx.Execute();
             var changeMemberTx = new ChangeMemberTransaction(empId,memberId,99.42M);
             changeMemberTx.Execute();
@@ -644,7 +644,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         public void TestSalariedUnionMemberDues() {
             int empId = 1;
 
-            var addTx = new AddSalariedEmployee(empId,"Bob", "Home", 1000);
+            var addTx = new AddSalariedEmployeeTransaction(empId,"Bob", "Home", 1000);
             addTx.Execute();
 
             var memberId = 7734;
@@ -663,7 +663,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestHourlyUnionMemberServiceCharge() {
             var empId = 1;
-            var addTx = new AddHourlyEmployee(empId,"Bill","Home",15.24M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill","Home",15.24M);
             addTx.Execute();
             int memberId = 7734;
             var memberTx = new ChangeMemberTransaction(empId,memberId,9.42M);
@@ -688,7 +688,7 @@ namespace PayrollCaseStudy.Domain.Tests {
         [TestMethod]
         public void TestServiceChargesSpanningMultiplePayPeriods() {
             var empId = 1;
-            var addTx = new AddHourlyEmployee(empId,"Bill","Home",15.24M);
+            var addTx = new AddHourlyEmployeeTransaction(empId,"Bill","Home",15.24M);
             addTx.Execute();
             int memberId = 7734;
             var memberTx = new ChangeMemberTransaction(empId,memberId,9.42M);
