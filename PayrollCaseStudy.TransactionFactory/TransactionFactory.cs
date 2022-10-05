@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace PayrollCaseStudy.TransactionFactory {
-    public interface Factory {
+    public interface TransactionFactory {
         TransactionApplication.Transaction MakeDeleteEmployeeTransaction(int employeeId);
 
         TransactionApplication.Transaction MakeTimeCardTransaction(CommonTypes.Date date,decimal hour,int empId);

@@ -1,6 +1,6 @@
 ﻿using System;
 namespace PayrollCaseStudy.PayrollFactory {
-    public interface Factory {
+    public interface PayrollFactory {
         PayrollCaseStudy.PayrollDomain.PaymentSchedule MakeBiweeklySchedule();
         PayrollCaseStudy.PayrollDomain.PaymentClassification MakeCommissionedClassification(decimal salary,decimal commissionRate);
         PayrollCaseStudy.PayrollDomain.PaymentMethod MakeDirectMethod(string bank, string account);

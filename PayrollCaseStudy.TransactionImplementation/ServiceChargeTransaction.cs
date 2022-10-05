@@ -20,7 +20,7 @@ namespace PayrollCaseStudy.TransactionImplementation {
             _charge = charge;
         }
         public void Execute() {
-            Employee e = PayrollDatabase.Scope.DatabaseInstance.GetUnionMember(_memberId);
+            Employee e = PayrollDatabase.Scope.PayrollDatabase.GetUnionMember(_memberId);
 
             e.Affiliation.AddServiceCharge(_forDate,_charge);
         }

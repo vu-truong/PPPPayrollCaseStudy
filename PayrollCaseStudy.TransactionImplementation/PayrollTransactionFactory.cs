@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace PayrollCaseStudy.TransactionImplementation {
-    public class PayrollTransactionFactory : TransactionFactory.Factory{
+    public class PayrollTransactionFactory : TransactionFactory.TransactionFactory{
         public TransactionApplication.Transaction MakeDeleteEmployeeTransaction(int employeeId) {
             return new DeleteEmployeeTransaction(employeeId);
         }
@@ -66,15 +66,15 @@ namespace PayrollCaseStudy.TransactionImplementation {
         }
 
         public TransactionApplication.Transaction MakeAddCommissionedEmployeeTransaction(int empId,string name,string address,decimal salary,decimal commissionrate) {
-            return new AddCommissionedEmployee(empId,name,address,salary,commissionrate);
+            return new AddCommissionedEmployeeTransaction(empId,name,address,salary,commissionrate);
         }
 
         public TransactionApplication.Transaction MakeAddSalariedEmployeeTransaction(int empId,string name,string address,decimal salary) {
-            return new AddSalariedEmployee(empId,name,address,salary);
+            return new AddSalariedEmployeeTransaction(empId,name,address,salary);
         }
 
         public TransactionApplication.Transaction MakeAddHourlyEmployeeTransaction(int empId,string name,string address,decimal hourlyRate) {
-            return new AddHourlyEmployee(empId,name,address,hourlyRate);
+            return new AddHourlyEmployeeTransaction(empId,name,address,hourlyRate);
         }
     }
 }

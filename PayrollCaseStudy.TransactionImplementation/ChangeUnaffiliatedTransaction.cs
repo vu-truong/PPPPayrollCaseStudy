@@ -20,7 +20,7 @@ namespace PayrollCaseStudy.TransactionImplementation {
             if(memberId==null) {
                 return;
             }
-            PayrollDatabase.Scope.DatabaseInstance.RemoveUnionMember(memberId.Value);
+            PayrollDatabase.Scope.PayrollDatabase.RemoveUnionMember(memberId.Value);
         }
     }
 }

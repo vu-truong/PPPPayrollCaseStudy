@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.PayrollFactory {
     public class Scope {
-        public static Factory PayrollFactory;
+        public static PayrollFactory PayrollFactory;
     }
 }

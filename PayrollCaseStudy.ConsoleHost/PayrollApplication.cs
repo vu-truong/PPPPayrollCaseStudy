@@ -13,7 +13,7 @@ namespace PayrollCaseStudy.ConsoleHost {
         }
 
         static void Main(string[] args) {
-            PayrollDatabase.Scope.DatabaseInstance = InMemPayrollDatbase.Database.Instance;
+            PayrollDatabase.Scope.PayrollDatabase = InMemPayrollDatabase.InMemPayrollDatabase.Instance;
             TransactionFactory.Scope.TransactionFactory = new TransactionImplementation.PayrollTransactionFactory();
             PayrollFactory.Scope.PayrollFactory = new PayrollImplementation.Factory();
 

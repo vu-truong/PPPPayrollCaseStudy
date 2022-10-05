@@ -18,10 +18,10 @@ namespace PayrollCaseStudy.TransactionImplementation {
         }
 
         public void Execute() {
-            var empIds = PayrollDatabase.Scope.DatabaseInstance.GetAllEmployeeIds();
+            var empIds = PayrollDatabase.Scope.PayrollDatabase.GetAllEmployeeIds();
 
             foreach(var empId in empIds) {
-                var employee = PayrollDatabase.Scope.DatabaseInstance.GetEmployee(empId);
+                var employee = PayrollDatabase.Scope.PayrollDatabase.GetEmployee(empId);
                 if(employee == null) {
                     continue;
                 }

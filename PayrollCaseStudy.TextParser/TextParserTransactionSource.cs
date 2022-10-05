@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace PayrollCaseStudy.PayrollApplication {
     public class TextParserTransactionSource : TransactionSource{
         readonly TextReader _reader;
-        readonly TransactionFactory.Factory _transactionFactory;
+        readonly TransactionFactory.TransactionFactory _transactionFactory;
         
         public TextParserTransactionSource(TextReader reader) {
             _reader = reader;

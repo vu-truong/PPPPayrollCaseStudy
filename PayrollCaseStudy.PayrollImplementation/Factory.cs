@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.PayrollImplementation {
-    public class Factory : PayrollFactory.Factory{
+    public class Factory : PayrollFactory.PayrollFactory{
         
         public PaymentSchedule MakeBiweeklySchedule() {
             return new BiweeklySchedule();

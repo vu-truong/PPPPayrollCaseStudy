@@ -40,10 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCommissionedEmployee.cs" />
+    <Compile Include="AddCommissionedEmployeeTransaction.cs" />
     <Compile Include="AddEmployeeTransaction.cs" />
-    <Compile Include="AddHourlyEmployee.cs" />
-    <Compile Include="AddSalariedEmployee.cs" />
+    <Compile Include="AddHourlyEmployeeTransaction.cs" />
+    <Compile Include="AddSalariedEmployeeTransaction.cs" />
     <Compile Include="ChangeAddressTransaction.cs" />
     <Compile Include="ChangeAffiliationTransaction.cs" />
     <Compile Include="ChangeClassificationTransaction.cs" />
