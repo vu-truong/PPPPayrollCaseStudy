@@ -1,11 +1,7 @@
 ﻿using PayrollCaseStudy.PayrollDomain;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.InMemPayrollDatbase {
+namespace PayrollCaseStudy.InMemPayrollDatabase {
     public class Database : PayrollCaseStudy.PayrollDatabase.Database{
         readonly Dictionary<int, Employee> _itsEmployees = new Dictionary<int,Employee>();
         readonly Dictionary<int,int> _unionMemberMap = new Dictionary<int,int>();

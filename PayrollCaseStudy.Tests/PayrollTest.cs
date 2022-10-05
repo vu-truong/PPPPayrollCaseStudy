@@ -13,11 +13,11 @@ using PayrollCaseStudy.EmployeeDataTransactions;
 namespace PayrollCaseStudy.Domain.Tests {
     [TestClass]
     public class PayrollTest {
-        readonly static InMemPayrollDatbase.Database Database = InMemPayrollDatbase.Database.Instance;
+        readonly static InMemPayrollDatabase.Database Database = InMemPayrollDatabase.Database.Instance;
 
         [ClassInitialize]
         public static void InitClass(TestContext t) {
-            PayrollDatabase.Scope.DatabaseInstance = Database;
+            PayrollDatabase.Scope.PayrollDatabase = Database;
         }
 
         [TestInitialize]

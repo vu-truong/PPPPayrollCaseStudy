@@ -14,7 +14,7 @@ namespace PayrollCaseStudy.EmployeeDataTransactions {
         }
 
         public void Execute() {
-            PayrollDatabase.Scope.DatabaseInstance.DeleteEmployee(_employeeId);
+            PayrollDatabase.Scope.PayrollDatabase.DeleteEmployee(_employeeId);
         }
     }
 }

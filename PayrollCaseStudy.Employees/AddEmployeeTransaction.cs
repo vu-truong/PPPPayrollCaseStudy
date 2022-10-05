@@ -26,7 +26,7 @@ namespace PayrollCaseStudy.Employees {
             employee.Classification = classification;
             employee.Schedule = paymentSchedule;
             employee.Method = method;
-            Scope.DatabaseInstance.AddEmployee(_employeeId, employee);
+            Scope.PayrollDatabase.AddEmployee(_employeeId, employee);
         }
 
         protected abstract PaymentSchedule GetSchedule(); 

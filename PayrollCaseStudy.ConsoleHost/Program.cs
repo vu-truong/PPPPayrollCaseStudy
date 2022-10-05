@@ -4,10 +4,10 @@ using System.IO;
 namespace PayrollCaseStudy.ConsoleHost {
     class Program {
         static void Main(string[] args) {
-            PayrollDatabase.Scope.DatabaseInstance = InMemPayrollDatbase.Database.Instance;
+            PayrollDatabase.Scope.PayrollDatabase = InMemPayrollDatabase.Database.Instance;
             var reader = new StreamReader(new FileStream("TestTransactions.txt",FileMode.Open,FileAccess.Read));
             var parser = new TextParserTransactionSource(reader);
-            var app = new Application(parser);
+            var app = new PayrollApplication.PayrollApplication(parser);
             app.Process();
             return;
         }

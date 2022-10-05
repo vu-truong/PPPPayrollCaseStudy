@@ -20,7 +20,7 @@ namespace PayrollCaseStudy.Classifications {
             _employeeId = employeeId;
         }
         public void Execute() {
-            var employee =  PayrollDatabase.Scope.DatabaseInstance.GetEmployee(_employeeId);
+            var employee =  PayrollDatabase.Scope.PayrollDatabase.GetEmployee(_employeeId);
 
             if(employee == null) {
                 throw new Exception("Employee not found");

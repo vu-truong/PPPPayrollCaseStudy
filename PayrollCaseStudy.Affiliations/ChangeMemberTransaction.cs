@@ -25,7 +25,7 @@ namespace PayrollCaseStudy.Affiliations {
         }
 
         protected override void RecordMembership(Employee e) {
-            PayrollDatabase.Scope.DatabaseInstance.AddUnionMember(_memberId,e);
+            PayrollDatabase.Scope.PayrollDatabase.AddUnionMember(_memberId,e);
         }
     }
 }
