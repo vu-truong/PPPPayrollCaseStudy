@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollCaseStudy.ConsoleHost", "PayrollCaseStudy.ConsoleHost\PayrollCaseStudy.ConsoleHost.csproj", "{B9629E29-38E3-49AD-9F4D-1B75A85AAA17}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollCaseStudy.PayrollApplication", "PayrollCaseStudy.PayrollApplication\PayrollCaseStudy.PayrollApplication.csproj", "{B9629E29-38E3-49AD-9F4D-1B75A85AAA17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollCaseStudy.Tests", "PayrollCaseStudy.Tests\PayrollCaseStudy.Tests.csproj", "{F367B1FB-AA92-42FA-9CCF-2EE08F0FD9FB}"
 EndProject
@@ -82,5 +84,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82F070E4-ACCC-4983-BBB1-9002FF9815DC}
 	EndGlobalSection
 EndGlobal
