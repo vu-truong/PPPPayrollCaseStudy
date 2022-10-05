@@ -175,15 +175,15 @@ namespace PayrollCaseStudy.PayrollApplication {
         }
 
         private Transaction AddCommissionedEmployee(int empId,string name,string address,WordReader wordReader) {
-            return new AddCommissionedEmployee(empId,name,address, wordReader.NextAsDecimal(), wordReader.NextAsDecimal());
+            return new AddCommissionedEmployeeTransaction(empId,name,address, wordReader.NextAsDecimal(), wordReader.NextAsDecimal());
         }
 
         private Transaction AddSalariedEmployee(int empId,string name,string address,WordReader wordReader) {
-            return new AddSalariedEmployee(empId,name,address,wordReader.NextAsDecimal());
+            return new AddSalariedEmployeeTransaction(empId,name,address,wordReader.NextAsDecimal());
         }
 
         private Transaction AddHourlyEmployee(int empId,string name,string address,WordReader wordReader) {
-            return new AddHourlyEmployee(empId,name,address,wordReader.NextAsDecimal());
+            return new AddHourlyEmployeeTransaction(empId,name,address,wordReader.NextAsDecimal());
         }
 
         

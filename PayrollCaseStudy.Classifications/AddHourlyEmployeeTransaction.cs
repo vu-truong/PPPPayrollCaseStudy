@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.Classifications {
-    public class AddHourlyEmployee : AddEmployeeTransaction{
+    public class AddHourlyEmployeeTransaction : AddEmployeeTransaction{
         private decimal _hourlyRate;
 
-        public AddHourlyEmployee(int empId,string name,string address,decimal hourlyRate) : base(empId,name,address){
+        public AddHourlyEmployeeTransaction(int empId,string name,string address,decimal hourlyRate) : base(empId,name,address){
             _hourlyRate = hourlyRate;
         }
 

@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.Classifications {
-    public class AddSalariedEmployee : AddEmployeeTransaction{
+    public class AddSalariedEmployeeTransaction : AddEmployeeTransaction{
         private decimal _itsSalary;
 
-        public AddSalariedEmployee(int employeeId, string name, string address, decimal salary) : base(employeeId,name,address) {
+        public AddSalariedEmployeeTransaction(int employeeId, string name, string address, decimal salary) : base(employeeId,name,address) {
             _itsSalary = salary;
         }
 
