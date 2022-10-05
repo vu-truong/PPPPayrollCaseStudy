@@ -11,7 +11,7 @@ namespace PayrollCaseStudy.ConsoleHost {
         static void Main(string[] args) {
             var reader = new StreamReader(new FileStream("TestTransactions.txt",FileMode.Open,FileAccess.Read));
             var parser = new TextParserTransactionSource(reader);
-            var app = new Application(parser);
+            var app = new PayrollApplication.PayrollApplication(parser);
             app.Process();
             return;
         }
