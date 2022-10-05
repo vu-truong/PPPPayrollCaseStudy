@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.ConsoleHost {
-    class PayrollApplication : TransactionApplication.Application{
+    class PayrollApplication : TransactionApplication.TransactionApplication{
         public PayrollApplication(TextParserTransactionSource source)  : base(source){
         }
 

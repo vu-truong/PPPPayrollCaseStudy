@@ -1,15 +1,10 @@
-﻿using PayrollCaseStudy.TransactionApplication;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.TransactionApplication {
-    public class Application {
+    public class TransactionApplication {
         readonly TransactionSource _source;
-        public Application(TransactionSource transactionSource) {
+        public TransactionApplication(TransactionSource transactionSource) {
             _source= transactionSource;
             
         }
