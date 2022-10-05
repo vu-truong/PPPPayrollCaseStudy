@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PayrollCaseStudy.InMemPayrollDatbase {
-    public class Database : PayrollCaseStudy.PayrollDatabase.Database{
+    public class InMemPayrollDatabase : PayrollCaseStudy.PayrollDatabase.PayrollDatabase{
         readonly Dictionary<int, Employee> _itsEmployees = new Dictionary<int,Employee>();
         readonly Dictionary<int,int> _unionMemberMap = new Dictionary<int,int>();
 
@@ -24,9 +24,9 @@ namespace PayrollCaseStudy.InMemPayrollDatbase {
             _itsEmployees.Clear();
         }
 
-        Database(){}
+        InMemPayrollDatabase(){}
 
-        public readonly static Database Instance = new Database();
+        public readonly static InMemPayrollDatabase Instance = new InMemPayrollDatabase();
 
         public void DeleteEmployee(int employeeId) {
             _itsEmployees.Remove(employeeId);

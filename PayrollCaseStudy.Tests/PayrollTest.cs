@@ -15,7 +15,7 @@ using PayrollCaseStudy.GeneralTransactions;
 namespace PayrollCaseStudy.Domain.Tests {
     [TestClass]
     public class PayrollTest {
-        readonly static InMemPayrollDatbase.Database Database = InMemPayrollDatbase.Database.Instance;
+        readonly static InMemPayrollDatbase.InMemPayrollDatabase Database = InMemPayrollDatbase.InMemPayrollDatabase.Instance;
 
         [ClassInitialize]
         public static void InitClass(TestContext t) {
