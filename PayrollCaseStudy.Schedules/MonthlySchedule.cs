@@ -1,10 +1,7 @@
 ﻿using PayrollCaseStudy.CommonTypes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.Schedules {
+namespace PayrollCaseStudy.Schedules
+{
     public class MonthlySchedule : PaymentSchedule{
         public bool IsPayDate(Date date) {
             return IsLastDayOfMonth(date);

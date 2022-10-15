@@ -1,11 +1,7 @@
 ﻿using PayrollCaseStudy.Methods;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.Transactions {
+namespace PayrollCaseStudy.Transactions
+{
     public class ChangeDirectTransaction : ChangeMethodTransaction{
         private string _account;
         private string _bank;

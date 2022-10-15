@@ -1,13 +1,9 @@
 ﻿using PayrollCaseStudy.Affiliations;
 using PayrollCaseStudy.CommonTypes;
 using PayrollCaseStudy.PayrollDatabase;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.Transactions {
+namespace PayrollCaseStudy.Transactions
+{
     public class ServiceChargeTransaction : Transaction{
         private decimal _charge;
         private Date _forDate;

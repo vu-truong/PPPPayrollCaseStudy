@@ -1,11 +1,8 @@
 ﻿using PayrollCaseStudy.Classifications;
 using PayrollCaseStudy.Schedules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.Transactions {
+namespace PayrollCaseStudy.Transactions
+{
     public class ChangeSalariedTransaction : ChangeClassificationTransaction{
         private decimal _monthlySalary;
         

@@ -1,10 +1,7 @@
 ﻿using PayrollCaseStudy.Pay;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.Classifications {
+namespace PayrollCaseStudy.Classifications
+{
     public class SalariedClassification : PaymentClassification{
         private decimal _itsSalary;
 

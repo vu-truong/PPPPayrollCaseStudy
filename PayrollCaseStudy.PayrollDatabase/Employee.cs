@@ -4,12 +4,9 @@ using PayrollCaseStudy.CommonTypes;
 using PayrollCaseStudy.Methods;
 using PayrollCaseStudy.Pay;
 using PayrollCaseStudy.Schedules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.PayrollDatabase {
+namespace PayrollCaseStudy.PayrollDatabase
+{
     public class Employee {
         private int _employeeId;
 

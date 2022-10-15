@@ -1,10 +1,8 @@
 ﻿using PayrollCaseStudy.CommonTypes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.Schedules {
+namespace PayrollCaseStudy.Schedules
+{
     public class BiweeklySchedule : PaymentSchedule{
         readonly static Date ReferenceDate = new Date(3,6,2015); // a friday
 

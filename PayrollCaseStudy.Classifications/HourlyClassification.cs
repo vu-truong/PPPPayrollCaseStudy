@@ -3,10 +3,9 @@ using PayrollCaseStudy.Pay;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.Classifications {
+namespace PayrollCaseStudy.Classifications
+{
     public class HourlyClassification : PaymentClassification{
         private decimal _hourlyRate;
         readonly List<TimeCard> _timeCards;

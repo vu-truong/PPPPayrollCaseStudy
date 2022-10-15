@@ -1,12 +1,8 @@
 ﻿using PayrollCaseStudy.Classifications;
 using PayrollCaseStudy.Schedules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.Transactions {
+namespace PayrollCaseStudy.Transactions
+{
     public class AddHourlyEmployeeTransaction : AddEmployeeTransaction{
         private decimal _hourlyRate;
 

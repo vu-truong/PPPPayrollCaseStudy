@@ -1,11 +1,10 @@
 ﻿using PayrollCaseStudy.CommonTypes;
 using PayrollCaseStudy.Pay;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.Classifications {
+namespace PayrollCaseStudy.Classifications
+{
     public class CommissionedClassification : PaymentClassification{
         private decimal _salary;
         

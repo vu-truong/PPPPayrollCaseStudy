@@ -1,11 +1,7 @@
 ﻿using PayrollCaseStudy.Methods;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.Transactions {
+namespace PayrollCaseStudy.Transactions
+{
     public class ChangeMailTransaction : ChangeMethodTransaction{
         private string _address;
 

@@ -1,10 +1,7 @@
 ﻿using PayrollCaseStudy.CommonTypes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.Pay {
+namespace PayrollCaseStudy.Pay
+{
     public class Paycheck {
         private Date _endDate;
         private Date _startdate;

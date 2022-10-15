@@ -1,11 +1,8 @@
 ﻿using PayrollCaseStudy.CommonTypes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.Schedules {
+namespace PayrollCaseStudy.Schedules
+{
     public class WeeklySchedule : PaymentSchedule{
         public bool IsPayDate(Date date) {
             if(date.DayOfWeek== DayOfWeek.Friday) {

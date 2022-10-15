@@ -1,9 +1,5 @@
 ﻿using PayrollCaseStudy.Affiliations;
 using PayrollCaseStudy.PayrollDatabase;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace PayrollCaseStudy.Transactions {
     public abstract class ChangeAffiliationTransaction : ChangeEmployeeTransaction{

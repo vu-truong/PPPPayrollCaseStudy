@@ -1,12 +1,9 @@
 ﻿using PayrollCaseStudy.Transactions;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.PayrollApplication {
+namespace PayrollCaseStudy.PayrollApplication
+{
     public class PayrollApplication {
         readonly TransactionSource _source;
         public PayrollApplication(TransactionSource transactionSource) {
