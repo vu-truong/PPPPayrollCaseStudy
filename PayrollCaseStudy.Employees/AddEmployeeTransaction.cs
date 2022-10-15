@@ -17,11 +17,11 @@ namespace PayrollCaseStudy.Employees
         public virtual void Execute() {
             PaymentClassification classification = GetClassification();
             PaymentSchedule paymentSchedule = GetSchedule();
-            PaymentMethod method = new HoldMethod();
+            //PaymentMethod method = new HoldMethod();
             var employee=  new Employee(_employeeId,_name,_address);
             employee.Classification = classification;
             employee.Schedule = paymentSchedule;
-            employee.Method = method;
+            //employee.Method = method;
             Scope.PayrollDatabase.AddEmployee(_employeeId, employee);
         }
 
