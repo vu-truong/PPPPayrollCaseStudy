@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.CommonTypes {
+namespace PayrollCaseStudy.CommonTypes
+{
     public class WordReader {
         string _line;
         

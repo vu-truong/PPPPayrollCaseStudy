@@ -2,9 +2,9 @@
 using System.Diagnostics;
 
 namespace PayrollCaseStudy.TransactionApplication {
-    public class TransactionApplicaion {
+    public class TransactionApplication {
         readonly TransactionSource _source;
-        public TransactionApplicaion(TransactionSource transactionSource) {
+        public TransactionApplication(TransactionSource transactionSource) {
             _source= transactionSource;
             
         }

@@ -1,12 +1,7 @@
-﻿using PayrollCaseStudy.GeneralTransactions;
-using PayrollCaseStudy.PayrollDomain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PayrollCaseStudy.PayrollDomain;
 
-namespace PayrollCaseStudy.GeneralTransactions {
+namespace PayrollCaseStudy.GeneralTransactions
+{
     public class ChangeAddressTransaction : ChangeEmployeeTransaction{
         private string _address;
 

@@ -2,13 +2,9 @@
 using PayrollCaseStudy.PayrollDatabase;
 using PayrollCaseStudy.PayrollDomain;
 using PayrollCaseStudy.TransactionApplication;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.GeneralTransactions {
+namespace PayrollCaseStudy.GeneralTransactions
+{
     public abstract class AddEmployeeTransaction: Transaction {
         private string _address;
         private string _name;

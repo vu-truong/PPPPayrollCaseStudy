@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PayrollCaseStudy.PayrollDatabase;
 using PayrollCaseStudy.Classifications;
 using PayrollCaseStudy.Methods;
 using PayrollCaseStudy.CommonTypes;
@@ -12,7 +11,8 @@ using PayrollCaseStudy.MethodTransactions;
 using PayrollCaseStudy.AffiliationTransactions;
 using PayrollCaseStudy.GeneralTransactions;
 
-namespace PayrollCaseStudy.Domain.Tests {
+namespace PayrollCaseStudy.Domain.Tests
+{
     [TestClass]
     public class PayrollTest {
         readonly static InMemPayrollDatbase.InMemPayrollDatabase Database = InMemPayrollDatbase.InMemPayrollDatabase.Instance;

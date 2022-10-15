@@ -1,6 +1,6 @@
 ﻿using PayrollCaseStudy.PayrollDomain;
-using System;
-namespace PayrollCaseStudy.PayrollDatabase {
+namespace PayrollCaseStudy.PayrollDatabase
+{
     public interface PayrollDatabase {
         void AddEmployee(int employeeId,Employee employee);
         void AddUnionMember(int memberId,Employee employee);

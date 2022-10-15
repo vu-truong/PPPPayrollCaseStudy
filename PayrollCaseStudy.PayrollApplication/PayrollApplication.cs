@@ -1,8 +1,8 @@
-﻿using PayrollCaseStudy.TransactionApplication;
-using System.IO;
+﻿using System.IO;
 
-namespace PayrollCaseStudy.PayrollApplication {
-    class PayrollApplication : TransactionApplicaion{
+namespace PayrollCaseStudy.PayrollApplication
+{
+    class PayrollApplication : TransactionApplication.TransactionApplication{
         public PayrollApplication(TextParserTransactionSource source)  : base(source){
         }
 

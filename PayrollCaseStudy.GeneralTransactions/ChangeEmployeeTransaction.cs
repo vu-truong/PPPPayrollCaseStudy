@@ -1,12 +1,8 @@
-﻿using PayrollCaseStudy.PayrollDatabase;
-using PayrollCaseStudy.PayrollDomain;
+﻿using PayrollCaseStudy.PayrollDomain;
 using PayrollCaseStudy.TransactionApplication;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.GeneralTransactions {
+namespace PayrollCaseStudy.GeneralTransactions
+{
     public abstract class ChangeEmployeeTransaction : Transaction{
         private int _empId;
 
