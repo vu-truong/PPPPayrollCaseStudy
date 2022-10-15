@@ -1,5 +1,5 @@
-﻿using System;
-namespace PayrollCaseStudy.PayrollFactory {
+﻿namespace PayrollCaseStudy.PayrollFactory
+{
     public interface PayrollFactory {
         PayrollCaseStudy.PayrollDomain.PaymentSchedule MakeBiweeklySchedule();
         PayrollCaseStudy.PayrollDomain.PaymentClassification MakeCommissionedClassification(decimal salary,decimal commissionRate);

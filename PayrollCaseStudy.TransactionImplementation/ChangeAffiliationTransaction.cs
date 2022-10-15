@@ -1,10 +1,7 @@
 ﻿using PayrollCaseStudy.PayrollDomain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.TransactionImplementation {
+namespace PayrollCaseStudy.TransactionImplementation
+{
     public abstract class ChangeAffiliationTransaction : ChangeEmployeeTransaction{
         
         public ChangeAffiliationTransaction(int empId) : base(empId){

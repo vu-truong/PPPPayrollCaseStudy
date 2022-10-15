@@ -1,10 +1,7 @@
 ﻿using PayrollCaseStudy.CommonTypes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.PayrollImplementation {
+namespace PayrollCaseStudy.PayrollImplementation
+{
     public class TimeCard {
         private Date _forDate;
 

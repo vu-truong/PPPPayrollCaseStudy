@@ -1,12 +1,7 @@
-﻿using PayrollCaseStudy.PayrollDatabase;
-using PayrollCaseStudy.PayrollDomain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PayrollCaseStudy.PayrollDomain;
 
-namespace PayrollCaseStudy.TransactionImplementation {
+namespace PayrollCaseStudy.TransactionImplementation
+{
     public class ChangeMemberTransaction : ChangeAffiliationTransaction{
         private int _empId;
         private int _memberId;

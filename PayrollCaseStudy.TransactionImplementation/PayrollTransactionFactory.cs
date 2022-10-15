@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace PayrollCaseStudy.TransactionImplementation {
+﻿namespace PayrollCaseStudy.TransactionImplementation
+{
     public class PayrollTransactionFactory : TransactionFactory.TransactionFactory{
         public TransactionApplication.Transaction MakeDeleteEmployeeTransaction(int employeeId) {
             return new DeleteEmployeeTransaction(employeeId);
