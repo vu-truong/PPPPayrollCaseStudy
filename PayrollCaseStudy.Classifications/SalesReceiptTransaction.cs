@@ -1,14 +1,9 @@
-﻿using PayrollCaseStudy.Classifications;
-using PayrollCaseStudy.CommonTypes;
-using PayrollCaseStudy.PayrollDatabase;
+﻿using PayrollCaseStudy.CommonTypes;
 using PayrollCaseStudy.PayrollDomain;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.Classifications {
+namespace PayrollCaseStudy.Classifications
+{
     public class SalesReceiptTransaction : Transaction{
         private decimal _amount;
         private Date _forDate;

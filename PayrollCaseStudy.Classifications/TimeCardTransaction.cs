@@ -1,13 +1,9 @@
-﻿using PayrollCaseStudy.Classifications;
-using PayrollCaseStudy.CommonTypes;
+﻿using PayrollCaseStudy.CommonTypes;
 using PayrollCaseStudy.PayrollDomain;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.Classifications {
+namespace PayrollCaseStudy.Classifications
+{
     public class TimeCardTransaction : Transaction{
         private int _empId;
         private decimal _hours;

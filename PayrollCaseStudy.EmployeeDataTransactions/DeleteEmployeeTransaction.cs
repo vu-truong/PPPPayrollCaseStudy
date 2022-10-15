@@ -1,11 +1,7 @@
 ﻿using PayrollCaseStudy.PayrollDomain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.EmployeeDataTransactions {
+namespace PayrollCaseStudy.EmployeeDataTransactions
+{
     public class DeleteEmployeeTransaction : Transaction{
         private int _employeeId;
 

@@ -1,10 +1,7 @@
 ﻿using PayrollCaseStudy.CommonTypes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.Affiliations {
+namespace PayrollCaseStudy.Affiliations
+{
     public class ServiceCharge {
         private Date _forDate;
 

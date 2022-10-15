@@ -1,11 +1,7 @@
-﻿using PayrollCaseStudy.Classifications;
-using PayrollCaseStudy.PayrollDomain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using PayrollCaseStudy.PayrollDomain;
 
-namespace PayrollCaseStudy.Classifications {
+namespace PayrollCaseStudy.Classifications
+{
     public class ChangeCommissionedTransaction : ChangeClassificationTransaction{
         private decimal _salary;
         private decimal _commissionRate;

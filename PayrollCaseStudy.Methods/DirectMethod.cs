@@ -1,10 +1,7 @@
 ﻿using PayrollCaseStudy.PayrollDomain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PayrollCaseStudy.Methods {
+namespace PayrollCaseStudy.Methods
+{
     public class DirectMethod :PaymentMethod{
         private string _account;
 

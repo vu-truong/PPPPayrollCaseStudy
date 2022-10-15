@@ -1,13 +1,7 @@
-﻿using PayrollCaseStudy.Affiliations;
-using PayrollCaseStudy.PayrollDatabase;
-using PayrollCaseStudy.PayrollDomain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PayrollCaseStudy.PayrollDomain;
 
-namespace PayrollCaseStudy.Affiliations {
+namespace PayrollCaseStudy.Affiliations
+{
     public class ChangeUnaffiliatedTransaction : ChangeAffiliationTransaction{
         public ChangeUnaffiliatedTransaction(int empId) : base(empId){
         }

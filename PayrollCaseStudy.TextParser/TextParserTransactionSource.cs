@@ -6,14 +6,10 @@ using PayrollCaseStudy.Methods;
 using PayrollCaseStudy.Payday;
 using PayrollCaseStudy.PayrollDomain;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollCaseStudy.PayrollApplication {
+namespace PayrollCaseStudy.PayrollApplication
+{
     public class TextParserTransactionSource : TransactionSource{
         readonly TextReader _reader;  
 
